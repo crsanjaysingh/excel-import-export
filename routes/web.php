@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Phpspreadsheet\ExcelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/import-excel', [ExcelController::class, 'importExcel'])->name('import.excel');
+Route::post('/process-excel', [ExcelController::class, 'processExcel'])->name('process.excel');
+Route::post('/html-to-excel', [ExcelController::class, 'htmlToExcel'])->name('html.to.excel');
+
+
