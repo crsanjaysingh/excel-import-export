@@ -18,9 +18,9 @@
                     <div class='row'>
                         <div class='col-md-6'>
                              <button class="btn btn-primary" id="exportButton">Export Data</button>
-                             <button class="btn btn-warning text-green">Import Data</button>
+                             <button id="uploadExcel" class="btn btn-warning text-green">Import Data</button>
                         </div>
-                        <div class='col-md-6'>
+                        <div class='col-md-6 d-none'>
                             <table border="1">
                                 <thead>
                                     <tr>
@@ -548,7 +548,7 @@ $(document).ready(function() {
                 htmlData: htmlData
             },
             success: function(response) {
-                console.log('Data sent successfully!');                
+                 window.location.href = "{{'/output.xlsx'}}";
             },
             error: function(error) {
                 console.error('Error sending data:', error);

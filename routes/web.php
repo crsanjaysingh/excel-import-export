@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/import-excel', [ExcelController::class, 'importExcel'])->name('import.excel');
+Route::get('/', [ExcelController::class, 'importExcel'])->name('import.excel');
 Route::post('/process-excel', [ExcelController::class, 'processExcel'])->name('process.excel');
 Route::post('/html-to-excel', [ExcelController::class, 'htmlToExcel'])->name('html.to.excel');
 
